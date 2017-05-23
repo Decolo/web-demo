@@ -13267,10 +13267,15 @@ module.exports = {
 var $ = __webpack_require__(48);
 var Carousel = function () {
     function _Carousel($ct) {
+        var _this2 = this;
+
         this.$ct = $ct;
         this.init();
         this.bind();
-        this.autoPlay();
+        setTimeout(function () {
+            _this2.autoPlay();
+            console.log('startplay');
+        }, 500);
     }
     _Carousel.prototype.init = function () {
         this.imgWidth = this.$ct.find('.container-img img').eq(0).width();
