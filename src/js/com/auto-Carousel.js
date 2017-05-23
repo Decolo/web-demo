@@ -6,10 +6,7 @@ var Carousel = (function() {
         this.$ct = $ct
         this.init()
         this.bind()
-        setTimeout(() => {
-            this.autoPlay()
-            console.log('startplay')
-        }, 500)
+        this.autoPlay()
     }
     _Carousel.prototype.init = function() {
         this.imgWidth = this.$ct.find('.container-img img').eq(0).width()
