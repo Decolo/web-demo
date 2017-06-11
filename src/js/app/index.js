@@ -15,7 +15,7 @@ Carousel.init($('.carousel'))
 new GoTop(200)
 
 let curPage = 1,
-    perPageCount = 3,
+    perPageCount = 6,
     isDataArrived = true
 $('.load-more').on('click', function() {
     getImg()

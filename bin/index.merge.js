@@ -13186,7 +13186,7 @@ _autoCarousel2.default.init((0, _jquery2.default)('.carousel'));
 new _goTop2.default(200);
 
 var curPage = 1,
-    perPageCount = 3,
+    perPageCount = 6,
     isDataArrived = true;
 (0, _jquery2.default)('.load-more').on('click', function () {
     getImg();
@@ -13267,15 +13267,10 @@ module.exports = {
 var $ = __webpack_require__(48);
 var Carousel = function () {
     function _Carousel($ct) {
-        var _this2 = this;
-
         this.$ct = $ct;
         this.init();
         this.bind();
-        setTimeout(function () {
-            _this2.autoPlay();
-            console.log('startplay');
-        }, 500);
+        this.autoPlay();
     }
     _Carousel.prototype.init = function () {
         this.imgWidth = this.$ct.find('.container-img img').eq(0).width();
