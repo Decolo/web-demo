@@ -13180,11 +13180,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 _simpleTab2.default.init((0, _jquery2.default)('.navbar')); //We are using --save instead of --save-dev this time, as these libraries will be used in runtime. 
 //We also use babel-polyfill so that ES2015 APIs are available in older browsers.
 
-
 _autoCarousel2.default.init((0, _jquery2.default)('.carousel'));
-
+setTimeout(function () {
+    window.location.reload();
+}, 2000);
 new _goTop2.default(200);
-
 var curPage = 1,
     perPageCount = 6,
     isDataArrived = true;
