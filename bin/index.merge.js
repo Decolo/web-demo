@@ -13288,7 +13288,7 @@ var Carousel = function () {
         this.autoPlay();
     }
     _Carousel.prototype.init = function () {
-        this.imgWidth = this.$ct.find('.container-img img').eq(0).width();
+        this.imgWidth = this.$ct.find('.container-img li').eq(0).width();
         this.$btnPre = this.$ct.find('.button.pre');
         this.$btnNext = this.$ct.find('.button.next');
         this.$ctImg = this.$ct.find('.container-img');
