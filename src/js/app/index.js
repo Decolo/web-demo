@@ -10,7 +10,14 @@ import GoTop from '../com/goTop.js';
 
 Tab.init($('.navbar'))
 Carousel.init($('.carousel'))
-setTimeout(function() { window.location.reload() }, 2000)
+
+function reload() {
+    console.log('reload')
+    var load = setTimeout(function() { window.location.reload() }, 1000)
+    clearTimeout(load)
+}
+reload()
+
 new GoTop(200)
 let curPage = 1,
     perPageCount = 6,

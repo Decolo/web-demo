@@ -13181,9 +13181,16 @@ _simpleTab2.default.init((0, _jquery2.default)('.navbar')); //We are using --sav
 //We also use babel-polyfill so that ES2015 APIs are available in older browsers.
 
 _autoCarousel2.default.init((0, _jquery2.default)('.carousel'));
-setTimeout(function () {
-    window.location.reload();
-}, 2000);
+
+function reload() {
+    console.log('reload');
+    var load = setTimeout(function () {
+        window.location.reload();
+    }, 1000);
+    clearTimeout(load);
+}
+reload();
+
 new _goTop2.default(200);
 var curPage = 1,
     perPageCount = 6,
