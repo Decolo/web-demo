@@ -13180,16 +13180,24 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 _simpleTab2.default.init((0, _jquery2.default)('.navbar')); //We are using --save instead of --save-dev this time, as these libraries will be used in runtime. 
 //We also use babel-polyfill so that ES2015 APIs are available in older browsers.
 
+
+!function imgLoad() {
+    var imgs = (0, _jquery2.default)('.carousel').find('img');
+
+    var _loop = function _loop(i) {
+        imgs[i].onload = function () {
+            console.log('imgload' + i);
+        };
+    };
+
+    for (var i = 0; i < imgs.length; i++) {
+        _loop(i);
+    }
+}();
 _autoCarousel2.default.init((0, _jquery2.default)('.carousel'));
 
-function reload() {
-    console.log('reload');
-    var load = setTimeout(function () {
-        window.location.reload();
-    }, 1000);
-    clearTimeout(load);
-}
-reload();
+// startCarousel()
+
 
 new _goTop2.default(200);
 var curPage = 1,

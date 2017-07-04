@@ -9,14 +9,20 @@ import GoTop from '../com/goTop.js';
 
 
 Tab.init($('.navbar'))
-Carousel.init($('.carousel'))
 
-function reload() {
-    console.log('reload')
-    var load = setTimeout(function() { window.location.reload() }, 1000)
-    clearTimeout(load)
-}
-reload()
+! function imgLoad() {
+    var imgs = $('.carousel').find('img')
+    for (let i = 0; i < imgs.length; i++) {
+        imgs[i].onload = function() {
+            console.log('imgload' + i)
+        }
+    }
+}()
+Carousel.init($('.carousel'));
+
+
+// startCarousel()
+
 
 new GoTop(200)
 let curPage = 1,
