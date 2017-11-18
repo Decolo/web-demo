@@ -195,7 +195,7 @@ a {
     position: absolute;
     top: 0;
     left: 0;
-    width: 8280px;
+    width: 9660px;
     height: 800px;
 }
 
@@ -204,47 +204,12 @@ a {
     height: 100%
 }
 
-#header .carousel .container-img li:nth-of-type(1) .img {
+#header .carousel .container-img li .img {
     width: 1380px;
     height: 100%;
-    background-image: url('../img/carousel5.png');
-    background-size: cover;
 }
 
-#header .carousel .container-img li:nth-of-type(2) .img {
-    width: 1380px;
-    height: 100%;
-    background-image: url('../img/carousel1.png');
-    background-size: cover;
-}
 
-#header .carousel .container-img li:nth-of-type(3) .img {
-    width: 1380px;
-    height: 100%;
-    background-image: url('../img/carousel2.png');
-    background-size: cover;
-}
-
-#header .carousel .container-img li:nth-of-type(4) .img {
-    width: 1380px;
-    height: 100%;
-    background-image: url('../img/carousel3.png');
-    background-size: cover;
-}
-
-#header .carousel .container-img li:nth-of-type(5) .img {
-    width: 1380px;
-    height: 100%;
-    background-image: url('../img/carousel4.png');
-    background-size: cover;
-}
-
-#header .carousel .container-img li:nth-of-type(6) .img {
-    width: 1380px;
-    height: 100%;
-    background-image: url('../img/carousel1.png');
-    background-size: cover;
-}
 
 #header .carousel .button {
     height: 200px;

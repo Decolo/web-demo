@@ -4,83 +4,25 @@ import 'babel-polyfill'; //We are using --save instead of --save-dev this time, 
 import $ from 'jquery';
 import Carousel from '../com/auto-Carousel';
 import Tab from '../com/simple-tab.js';
-import WaterFall from '../com/waterFall.js';
+import ClickLoad from '../com/clickload.js'
 import GoTop from '../com/goTop.js';
 
-
-Tab.init($('.navbar'))
-
-! function imgLoad() {
-    var imgs = $('.carousel').find('img')
-    for (let i = 0; i < imgs.length; i++) {
-        imgs[i].onload = function() {
-            console.log('imgload' + i)
-        }
-    }
-}()
-Carousel.init($('.carousel'));
-
-
-// startCarousel()
-
-
-new GoTop(200)
-let curPage = 1,
-    perPageCount = 6,
-    isDataArrived = true
-$('.load-more').on('click', function() {
-    getImg()
+$(document).ready(() => {
+  // Tab init
+  Tab.init($('.navbar'))
+  // Carousel init
+  Carousel.init($('.carousel'), 400, 3000)
+  // GoTop init
+  new GoTop(200)
+  // ClickLoad init
+  ClickLoad.init($('.load-more'))
 })
 
-function getImg() {
-    $.ajax({
-        url: 'https://platform.sina.com.cn/slide/album_tech?',
-        type: 'get',
-        dataType: 'jsonp',
-        jsonp: 'jsoncallback',
-        data: {
-            app_key: '1271687855',
-            num: perPageCount,
-            page: curPage
-        },
-        success: function(ret) {
-            if (ret.status.code === '0') {
-                render(ret.data)
-                curPage++;
-                isDataArrived = true
-            }
-        },
-        error: function() {
-            console.log('fail to get data')
-        }
-    })
-    isDataArrived = false
-}
 
-function render(newsList) {
-    $.each(newsList, function(idx, news) {
-        var $node = getNode(news)
-        $node.find('img').on('load', function() {
-            $('.category .category-list').append($node)
-            WaterFall($node)
-        })
-    })
-}
 
-function getNode(obj) {
-    let tpl =
-        '<li class="mock">' +
-        '<a href="#">' +
-        '<div class="list-cover">' +
-        '<svg class="icon" aria-hidden="true">' +
-        '<use xlink:href="#icon-gengduo"></use>' +
-        '</svg>' +
-        '</div>' +
-        '<img src="' + obj.img_url + '" alt="' + obj.img_count + '"/>' +
-        '</a>' +
-        '<h3>' + obj.name + '</h3>' +
-        '<p>' + obj.short_intro + '</p>' +
-        '</li>'
 
-    return $(tpl)
-}
+
+
+
+
+

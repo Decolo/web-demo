@@ -1,8 +1,16 @@
+const path = require('path')
+
 module.exports = {
     entry: './src/js/app/index.js',
+    devServer: {
+        contentBase: path.join(__dirname, "dist"),
+        compress: true,
+        port: 9000
+    },
     output: {
-        path: '/Users/decolo/repos/web-demo-knife&fork/bin',
-        filename: 'index.merge.js'
+        path: path.resolve(__dirname, 'dist'),
+        publicPath:"/assets/",
+        filename: 'bundle.js'
     },
     module: {
         loaders: [{
